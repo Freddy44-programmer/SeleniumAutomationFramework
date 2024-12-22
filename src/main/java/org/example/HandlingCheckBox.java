@@ -1,8 +1,10 @@
 package org.example;
 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
 public class HandlingCheckBox {
 
@@ -12,11 +14,15 @@ public class HandlingCheckBox {
         WebDriver driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/dropdownsPractise");
 
-
-        System.out.println(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
-       driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).click();
+        // check if the checkbox is selected
+        // using Assertions
+        Assert.assertFalse(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
+        //
+        driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).click();
        // check if the checkbox is selected
-        System.out.println(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
+        // using Assertions
+        Assert.assertTrue(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
+        //
 
 
 
