@@ -12,9 +12,9 @@ public class HandlingAjax_MouseInteractions {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Freddy\\Desktop\\SeleniumAutomationFramework\\drivers\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.amazon.com/");
-
-        //performing mouse moving action
         Actions a = new Actions(driver);
+
+        //This moves to specific element
         a.moveToElement(driver.findElement(By.cssSelector("a[id='nav-link-accountList']"))).build().perform();
 
     }
