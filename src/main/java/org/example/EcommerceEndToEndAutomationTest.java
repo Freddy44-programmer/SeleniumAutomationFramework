@@ -5,25 +5,36 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
+import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 
-public class EcommerceFunctionalArraysAutomatedTest {
+public class EcommerceEndToEndAutomationTest {
 
     public static void main(String[] args) throws InterruptedException {
 
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Freddy\\Desktop\\SeleniumAutomationFramework\\drivers\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
+        //implicit Wait
+        //This is a global setting that applies to every element location call for the entire session
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
 
         String[] itemsNeeded= {"Cucumber","Brocolli","Beetroot"};
 
-        driver.get("https://rahulshettyacademy.com/SeleniumPractise");
+        driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
 
         Thread.sleep(3000);
         addItems(driver,itemsNeeded);
-
+        driver.findElement(By.cssSelector("img[alt='Cart']")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'PROCEED TO CHECKOUT')]")).click();
+        driver.findElement(By.cssSelector("input.promoCode")).sendKeys("rahulshettyacademy");
+        driver.findElement(By.cssSelector("button.promoBtn")).click();
+        System.out.println(driver.findElement(By.cssSelector("span.promoInfo")).getText());
     }
+
+
 
     public static void addItems(WebDriver driver,String[] itemsNeeded)
 
@@ -55,8 +66,11 @@ public class EcommerceFunctionalArraysAutomatedTest {
                 {
                     break;
                 }
-
-
             }
+
+
+
+
         }
-    }}
+    }
+}
