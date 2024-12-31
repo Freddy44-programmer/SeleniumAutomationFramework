@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 import java.time.Duration;
@@ -31,6 +33,12 @@ public class EcommerceEndToEndAutomationTest {
         driver.findElement(By.xpath("//button[contains(text(),'PROCEED TO CHECKOUT')]")).click();
         driver.findElement(By.cssSelector("input.promoCode")).sendKeys("rahulshettyacademy");
         driver.findElement(By.cssSelector("button.promoBtn")).click();
+
+        //explicit wait.
+        // Explicit wait is applied only at targeted elements
+        WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(5));
+        w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span.promoInfo")));
+
         System.out.println(driver.findElement(By.cssSelector("span.promoInfo")).getText());
     }
 
