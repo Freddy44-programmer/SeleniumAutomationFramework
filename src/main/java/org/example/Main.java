@@ -25,7 +25,6 @@ public class Main {
          WebDriver driver = new EdgeDriver();
 
 
-
         driver.get("https://rahulshettyacademy.com/");
         System.out.println(driver.getTitle());
         System.out.println(driver.getCurrentUrl());
