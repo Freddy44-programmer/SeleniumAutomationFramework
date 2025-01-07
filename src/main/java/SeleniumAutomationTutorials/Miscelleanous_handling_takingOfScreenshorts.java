@@ -1,4 +1,4 @@
-package org.example;
+package SeleniumAutomationTutorials;
 
 
 import org.apache.commons.io.FileUtils;

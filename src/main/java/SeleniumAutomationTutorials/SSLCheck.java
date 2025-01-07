@@ -1,4 +1,4 @@
-package org.example;
+package SeleniumAutomationTutorials;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
