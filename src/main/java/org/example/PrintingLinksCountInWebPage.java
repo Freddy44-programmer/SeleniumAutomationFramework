@@ -16,9 +16,16 @@ public class PrintingLinksCountInWebPage {
         System.out.println(driver.findElements(By.tagName("a")).size());
 
         // get the links count in the footer
-        WebElement footerdriver = driver.findElement(By.id("gf-BIG"));
+        WebElement footerdriver = driver.findElement(By.id("gf-BIG")); //Limiting webdriver scope
         System.out.println(footerdriver.findElements(By.tagName("a")).size());
 
+        //3
+        WebElement columndriver = footerdriver.findElement(By.xpath("//table/tbody/tr/td[1]/ul")); //Limiting webdriver scope
+        System.out.println(columndriver.findElements(By.tagName("a")).size());
 
+        //click on each link in the column and check if the page are opening
+        for(int i=1; i<columndriver.findElements(By.tagName("a")).size(); i++){
+            columndriver.findElements(By.tagName("a")).get(i).click();
+        }
     }
 }
