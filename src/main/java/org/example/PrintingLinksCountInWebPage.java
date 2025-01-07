@@ -1,6 +1,7 @@
 package org.example;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -25,7 +26,8 @@ public class PrintingLinksCountInWebPage {
 
         //click on each link in the column and check if the page are opening
         for(int i=1; i<columndriver.findElements(By.tagName("a")).size(); i++){
-            columndriver.findElements(By.tagName("a")).get(i).click();
+           String clickonlinkTab = Keys.chord(Keys.CONTROL,Keys.ENTER);
+            columndriver.findElements(By.tagName("a")).get(i).sendKeys(clickonlinkTab);
         }
     }
 }
