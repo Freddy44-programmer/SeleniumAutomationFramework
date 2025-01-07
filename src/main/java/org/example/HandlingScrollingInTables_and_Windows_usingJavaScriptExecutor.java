@@ -5,6 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
 import java.util.List;
 
@@ -33,6 +34,7 @@ public class HandlingScrollingInTables_and_Windows_usingJavaScriptExecutor {
           sum = sum + Integer.parseInt(values.get(i).getText());
        }
       System.out.println(sum);
-
-    }
+      int total = Integer.parseInt(driver.findElement(By.cssSelector(".totalAmount")).getText().split(":")[1].trim());
+        Assert.assertEquals(sum,total);
+      }
 }
