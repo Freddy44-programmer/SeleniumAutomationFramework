@@ -16,6 +16,8 @@ public class InvokingMultipleWindows_Tabs {
         WebDriver driver = new ChromeDriver();
 
         driver.get("https://rahulshettyacademy.com/angularpractice/");
+
+        //switching window/tab
         driver.switchTo().newWindow(WindowType.TAB);
 
         Set<String> handles = driver.getWindowHandles(); //[parentid,childid,subchildId]
@@ -33,5 +35,11 @@ public class InvokingMultipleWindows_Tabs {
         // WebElement Partial Screenshot code
        File file = name.getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(file, new File("logo.png"));
+
+      //Get height & Width of the text field
+        System.out.println(name.getRect().getDimension().getHeight());
+        System.out.println(name.getRect().getDimension().getWidth());
+
+
     }
 }
