@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class test1 {
@@ -59,7 +60,7 @@ public class test1 {
        }).count();
        System.out.println(d);
        //print all the names of the ArrayList
-       names.stream().filter(s->s.length()>4).forEach(s-> System.out.println(s));
+       names.stream().filter(s->s.length()>4).limit(1).forEach(s-> System.out.println(s));
    }
 
 
@@ -88,5 +89,21 @@ public class test1 {
       boolean flag = newStream.anyMatch(s -> s.equalsIgnoreCase("daniel"));
        System.out.println(flag);
        Assert.assertTrue(flag);
+   }
+
+   @Test
+    public void streamCollect(){
+            List<String> ls = Stream.of("Abzsc","bcde","cde","def","Acdbg").filter(s->s.endsWith("e")).map(s->s.toUpperCase())
+            .collect(Collectors.toList());
+            System.out.println(ls.get(0));
+
+
+       List<Integer> numbers = Arrays.asList(3,2,2,7,5,1,9,7);
+       //print unique number for this array
+       //sort the array - 3rd index
+//       numbers.stream().distinct().forEach(s-> System.out.println(s));
+       List<Integer> li= numbers.stream().distinct().sorted().collect(Collectors.toList());
+       System.out.println(li.get(2));
+
    }
 }
