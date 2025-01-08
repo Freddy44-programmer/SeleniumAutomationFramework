@@ -1,15 +1,16 @@
 package SeleniumAutomationTutorials;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WindowType;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.Set;
 
 public class InvokingMultipleWindows_Tabs {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Freddy\\Desktop\\SeleniumAutomationFramework\\drivers\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
@@ -26,6 +27,11 @@ public class InvokingMultipleWindows_Tabs {
        String courseName = driver.findElements(By.cssSelector("a[href*='https://courses.rahulshettyacademy.com/p']"))
                        .get(1).getText();
         driver.switchTo().window(parentWindowId);
-        driver.findElement(By.cssSelector("[name='name'")).sendKeys(courseName);
+
+       WebElement name = driver.findElement(By.cssSelector("[name='name'"));
+        name.sendKeys(courseName);
+        // WebElement Partial Screenshot code
+       File file = name.getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(file, new File("logo.png"));
     }
 }
