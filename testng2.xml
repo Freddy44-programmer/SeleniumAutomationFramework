@@ -1,0 +1,9 @@
+
+<suite name="Loan Department" >
+    <test name="Personal Loan">
+<!-- running testcases based of packages level with regex-->
+        <packages>
+           <package name="TestNGTutorials"/>
+        </packages>
+    </test>
+</suite>
