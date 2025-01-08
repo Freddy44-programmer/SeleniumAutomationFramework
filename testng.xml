@@ -1,16 +1,20 @@
 
 <suite name="Loan Department" >
-<!--    <test name="Personal Loan">-->
-<!--        <classes>-->
-<!--            <class name="TestNGTutorials.test1"/>-->
-<!--            <class name="TestNGTutorials.test2"/>-->
-<!--            <class name="TestNGTutorials.test2"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Personal Loan">
+        <classes>
+            <class name="TestNGTutorials.test1">
+                <!-- Including mechanism to control testcases -->
+                <methods>
+                    <include name="demo"/>
+                </methods>
+            </class>
+            <class name="TestNGTutorials.test2"/>
+        </classes>
+    </test>
 
     <test name="car Loan">
         <classes>
-<!-- Including and Excluding mechanism to control testcases -->
+<!-- Excluding mechanism to control testcases -->
             <class name="TestNGTutorials.test3">
                 <methods>
                     <exclude name="MobileloginCarLoan"/>
