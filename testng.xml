@@ -14,7 +14,7 @@
 
     <test name="car Loan">
         <classes>
-<!-- Excluding every method that starts with "mobile" mechanism to control testcases using regular expression (regex) -->
+<!-- Excluding every method that starts with "mobile" mechanism to control testcases using regular expression (regex) example "Mobile.*" -->
             <class name="TestNGTutorials.test3">
                 <methods>
                     <exclude name="Mobile.*"/>
