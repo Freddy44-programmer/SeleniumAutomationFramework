@@ -14,10 +14,10 @@
 
     <test name="car Loan">
         <classes>
-<!-- Excluding mechanism to control testcases -->
+<!-- Excluding every method that starts with "mobile" mechanism to control testcases using regular expression (regex) -->
             <class name="TestNGTutorials.test3">
                 <methods>
-                    <exclude name="MobileloginCarLoan"/>
+                    <exclude name="Mobile.*"/>
                 </methods>
             </class>
         </classes>

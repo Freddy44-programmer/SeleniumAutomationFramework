@@ -16,6 +16,16 @@ public class test3 {
     {
         System.out.println("Mobile login car loan");
     }
+    @Test
+    public void MobileSignInCarLoan()
+    {
+        System.out.println("Mobile login car loan signin");
+    }
+    @Test
+    public void MobileSignOutCarLoan()
+    {
+        System.out.println("Mobile login car loan signout");
+    }
 
 
     @Test
