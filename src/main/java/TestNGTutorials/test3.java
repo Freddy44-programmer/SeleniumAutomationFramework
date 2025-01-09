@@ -1,16 +1,28 @@
 package TestNGTutorials;
 
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 public class test3 {
 
 
+    @AfterSuite
+    public void Afsuite()
+    {
+        System.out.println("After suite annotation");
+    }
     @Test
     public void WebloginCarLoan()
     {
         System.out.println("Web login car loan");
     }
 
+    @BeforeSuite
+    public void Bfsuite()
+    {
+        System.out.println("Before suite annotation");
+    }
     @Test
     public void MobileloginCarLoan()
     {
