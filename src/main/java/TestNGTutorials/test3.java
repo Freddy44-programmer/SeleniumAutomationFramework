@@ -4,6 +4,17 @@ import org.testng.annotations.*;
 
 public class test3 {
 
+    @BeforeClass
+    public void BeforeClass()
+    {
+        System.out.println("Before class annotation");
+    }
+
+    @AfterClass
+    public void AfterClass()
+    {
+        System.out.println("After class annotation");
+    }
 
     @AfterSuite
     public void Afsuite()
