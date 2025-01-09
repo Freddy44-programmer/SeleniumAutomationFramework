@@ -1,8 +1,6 @@
 package TestNGTutorials;
 
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class test3 {
 
@@ -11,6 +9,19 @@ public class test3 {
     public void Afsuite()
     {
         System.out.println("After suite annotation");
+    }
+
+    @BeforeMethod
+    public void BeforeMethod()
+    {
+        System.out.println("Before Method annotation");
+    }
+
+
+    @AfterMethod
+    public void AfterMethod()
+    {
+        System.out.println("After Method annotation");
     }
     @Test
     public void WebloginCarLoan()
