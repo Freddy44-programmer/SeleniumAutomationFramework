@@ -1,6 +1,6 @@
 
 <suite name="Loan Department" >
-    <test name="Personal Loan">
+    <test name="Personal Loan" > <!--parallel="TestNGTutorials"-->
         <classes>
             <class name="TestNGTutorials.test1">
                 <!-- Including mechanism to control testcases -->
@@ -14,7 +14,7 @@
 
     <test name="car Loan">
         <classes>
-<!-- Excluding every method that starts with "mobile" mechanism to control testcases using regular expression (regex) example "Mobile.*" -->
+ Excluding every method that starts with "mobile" mechanism to control testcases using regular expression (regex) example "Mobile.*"
             <class name="TestNGTutorials.test3">
                 <methods>
                     <exclude name="Mobile.*"/>

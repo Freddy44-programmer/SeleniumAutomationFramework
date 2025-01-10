@@ -34,7 +34,7 @@ public class test3 {
     {
         System.out.println("After Method annotation");
     }
-    @Test(groups = "smoke")
+    @Test
     public void WebloginCarLoan()
     {
         System.out.println("Web login car loan smoke/ depends on method loginCarloan");
@@ -55,7 +55,7 @@ public class test3 {
     {
         System.out.println("Mobile login car loan signin");
     }
-    @Test
+    @Test(groups = "smoke")
     public void MobileSignOutCarLoan()
     {
         System.out.println("Mobile login car loan signout");

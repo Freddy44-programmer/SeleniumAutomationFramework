@@ -1,9 +1,12 @@
 
 <suite name="Loan Department" >
+    <listeners>
+        <listener class-name="TestNGTutorials.Listeners"></listener>
+    </listeners>
     <test name="Regression">
         <groups>
             <run>
-               <include name="smoke"/>
+               <exclude name="smoke"/>
             </run>
         </groups>
             <classes>
