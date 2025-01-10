@@ -34,10 +34,10 @@ public class test3 {
     {
         System.out.println("After Method annotation");
     }
-    @Test
+    @Test(groups = "smoke")
     public void WebloginCarLoan()
     {
-        System.out.println("Web login car loan");
+        System.out.println("Web login car loan smoke");
     }
 
     @BeforeSuite

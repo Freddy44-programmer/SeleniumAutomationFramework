@@ -1,0 +1,15 @@
+
+<suite name="Loan Department" >
+    <test name="Regression">
+        <groups>
+            <run>
+               <include name="smoke"/>
+            </run>
+        </groups>
+            <classes>
+                <class name="TestNGTutorials.test1"/>
+                <class name="TestNGTutorials.test2"/>
+                <class name="TestNGTutorials.test3"/>
+            </classes>
+    </test>
+</suite>

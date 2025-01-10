@@ -12,10 +12,10 @@ public class test2 {
         System.out.println("After Test annotation");
     }
 
-    @Test
+    @Test(groups = "smoke")
     public void demo3()
     {
-        System.out.println("Good day");
+        System.out.println("Good day day smoke smoke");
     }
 
 
