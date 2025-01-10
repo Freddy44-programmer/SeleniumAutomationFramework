@@ -37,7 +37,7 @@ public class test3 {
     @Test(groups = "smoke")
     public void WebloginCarLoan()
     {
-        System.out.println("Web login car loan smoke");
+        System.out.println("Web login car loan smoke/ depends on method loginCarloan");
     }
 
     @BeforeSuite
@@ -45,7 +45,7 @@ public class test3 {
     {
         System.out.println("Before suite annotation");
     }
-    @Test
+    @Test(dependsOnMethods = {"WebloginCarLoan"})
     public void MobileloginCarLoan()
     {
         System.out.println("Mobile login car loan");
